@@ -68,5 +68,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: uses another workflow
-        uses: ./.github/workflows/reuse.yaml
+        uses: ./.github/workflows/reuse.yml
        
