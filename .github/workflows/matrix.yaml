@@ -1,0 +1,21 @@
+name: testing the matrix
+on: push
+jobs:
+    testin_gmatix:
+     continue-on-error: true
+     strategy:
+        matrix:
+            version: [10,12,14]
+            os: [ubuntu-latest, windows-latest]
+     runs-on: ${{matrix.os}}
+     steps:
+        - name: Get the code
+          uses: actions/checkout@v4
+        - name: install nodejs
+          uses: actions/setup-node@v4
+          with:
+            node-version: ${{matrix.version}}
+        - name: install dependence
+          run: npm ci
+        - name: Build project
+          run: npm run build
