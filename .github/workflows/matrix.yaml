@@ -2,7 +2,6 @@ name: testing the matrix
 on: push
 jobs:
     testin_gmatix:
-     continue-on-error: true
      strategy:
         matrix:
             version: [10,12,14]
